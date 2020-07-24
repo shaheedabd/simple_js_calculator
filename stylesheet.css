@@ -1,0 +1,108 @@
+/* body {
+    position: relative;
+    padding-top: calc(50vh - 23vw);
+    background-image: -webkit-linear-gradient(top left, #34be5b 0%, #E95420 100%);
+    background-image: linear-gradient(to bottom right, #34be5b 0%, #E95420 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+.calculator {
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px;
+    width: 30%;
+}
+
+.calculator-screen {
+    width: 100%;
+    height: 100px;
+    background: rgba(41, 47, 54, 0.6) !important;
+    resize: none;
+    border: solid #1c2128;
+    border-width: 0 0 10px;
+    border-radius: 0 !important;
+    color: #E95420;
+    text-align: right;
+    font-size: 2.5em;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.calculator-keys {
+    width: 100%;
+    position: relative;
+    background: #292f36;
+    padding: 5% 0 5% !important;
+}
+
+.row {
+    display: flex;
+}
+
+.calculator-keys, .row {
+    padding: 0;
+    margin: 0;
+    background: #292f36;
+}
+
+button {
+    height: 80px;
+    background-color: #292f36;
+    border: 1px solid transparent;
+    font-size: 32px;
+    color: #34be5b;
+    width: 25%;
+    outline: none;
+}
+
+button:hover {
+    color: #55D078 !important;
+    background-color: #3F4853;
+}
+
+button:active {
+    color: #34be5b !important;
+    background-color: #292f36;
+}
+
+.operator, .percentage, .delete, .all-clear, .equal-sign {
+    color: #C34113;
+}
+
+.operator:hover, .percentage:hover, .delete:hover, .all-clear:hover, .equal-sign:hover {
+    color: #E95420 !important;
+    background-color: #3F4853;
+}
+
+.operator:active, .percentage:active, .delete:active, .all-clear:active, .equal-sign:active {
+    color: #C34113 !important;
+    background-color: #292f36;
+}
+
+/* MEDIA QUERY TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .button {
+        font-size: 16px !important;
+    }
+}
+
+/* MEDIA QUERY SMART PHONE */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .calculator {
+        padding: 0 !important;
+    }
+
+    .calculator-screen {
+        height: 20vh;
+        max-height: 20vh;
+    }
+
+    .calculator-keys {
+        height: 100% !important;
+        max-height: 80vh;
+    }
+}
