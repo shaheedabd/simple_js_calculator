@@ -2,6 +2,7 @@
 let prevNumber = '';
 let calculationOperator = '';
 let currentNumber = '0';
+let count = 0;
 
 const calculatorScreen = document.querySelector('.calculator-screen');
 
@@ -48,8 +49,13 @@ operators.forEach((operator) => {
 const percentage = document.querySelector(".percentage");
 
 percentage.addEventListener('click', () => {
-    currentNumber = parseFloat(currentNumber) / 100;
-    updateScreen(currentNumber);
+    count++;
+    if(count <= 1) {
+        currentNumber = parseFloat(currentNumber) / 100;
+        updateScreen(currentNumber);
+    } else {
+        return;
+    }
 });
 
 /* EQUAL SIGN */    /* EQUAL SIGN */    /* EQUAL SIGN */
@@ -86,8 +92,13 @@ const calculate = () => {
 const tenPow = document.querySelector(".tenPower");
 
 tenPow.addEventListener('click', () => {
-    currentNumber = parseFloat(currentNumber) * 100;
-    updateScreen(currentNumber);
+    count++;
+    if(count <= 1) {
+        currentNumber = parseFloat(currentNumber) * 100;
+        updateScreen(currentNumber);
+    } else {
+        return;
+    }
 });
 
 /* ALL CLEAR (AC) */    /* ALL CLEAR (AC) */    /* ALL CLEAR (AC) */
@@ -95,6 +106,7 @@ const clearAll = () => {
     prevNumber = '';
     calculationOperator = '';
     currentNumber = '0';
+    count = 0;
 };
 
 const clearBtn = document.querySelector('.all-clear');
@@ -108,9 +120,9 @@ clearBtn.addEventListener('click', () => {
 const del = document.querySelector(".delete");
 
 del.addEventListener("click", () => {
-    console.log(currentNumber.length);
-    if (currentNumber !== "0" && currentNumber.length !== 1) {
-      currentNumber = currentNumber.slice(0, currentNumber.length - 1);
+    count = currentNumber.length;
+    if (count !== "0" && count !== 1) {
+      currentNumber = currentNumber.slice(0, count - 1);
     } else {
       currentNumber = "0";
     }
